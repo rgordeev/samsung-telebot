@@ -1,0 +1,36 @@
+logging:
+  level:
+    ROOT: DEBUG
+    ru.rgordeev: DEBUG
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-exclude: .h2.server.properties
+    livereload:
+      enabled: false
+
+  jackson:
+    serialization:
+      indent-output: true
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    hikari:
+      auto-commit: false
+
+  h2:
+    console:
+      enabled: false
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+
+bot:
+  token: ${BOT_TOKEN}
+  username: ${BOT_USERNAME}
