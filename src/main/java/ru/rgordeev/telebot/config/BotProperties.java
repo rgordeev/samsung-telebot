@@ -1,4 +1,4 @@
-package ru.rgordeev.telebot;
+package ru.rgordeev.telebot.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
