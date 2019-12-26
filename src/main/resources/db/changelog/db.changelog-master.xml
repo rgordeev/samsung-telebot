@@ -18,14 +18,17 @@
             </not>
         </preConditions>
         <createTable tableName="messages">
-            <column name="id" type="bigserial" autoIncrement="true">
+            <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="user_id" type="varchar(255)">
+            <column name="user_id" type="int">
                 <constraints nullable="false"/>
             </column>
-            <column name="message" type="text"/>
+            <column name="user_name" type="varchar(255)"/>
+            <column name="message_text" type="text"/>
         </createTable>
+
+        <createSequence sequenceName="message_id_seq" startValue="1" incrementBy="50"/>
     </changeSet>
 
 </databaseChangeLog>
